@@ -1,0 +1,19 @@
+The code is an Arduino sketch that monitors the incoming data via the NRF24L01 transceiver. 
+The transceiver is used to receive messages and the sketch checks the incoming messages 
+to see if they match the string "Touch detected". If the incoming message matches the expected string, 
+the relay module is disconnected.
+
+The code starts with the required libraries being imported, 
+including the libraries for the NRF24L01 transceiver and the SPI communication protocol.
+
+In the setup() function, the pins for the transceiver and the relay module are defined
+and the communication between the transceiver and the Arduino is initialized. 
+The setup also includes the configuration for the transceiver, 
+such as setting its address, channel and payload size.
+
+In the loop() function, the code continually checks for incoming messages and compares the received message 
+to the expected string "Touch detected". If the received message matches the expected string,
+ the relay module is disconnected using the digitalWrite function.
+
+Overall, the code provides a simple solution for monitoring incoming messages via the NRF24L01 transceiver
+and disconnecting the relay module based on the message received.
