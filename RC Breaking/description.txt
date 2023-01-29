@@ -1,0 +1,19 @@
+The code is an Arduino program that uses pulse width modulation (PWM) to control the speed and direction of two motors. 
+The code uses an obstacle sensor to check the presence of an obstacle and stops the motors if an obstacle is detected. 
+The code also defines a function named "breaking" to control the motors.
+
+The program starts by initializing the serial monitor and setting the mode of pin 13 to OUTPUT. 
+The pulseToPWM function takes an input pulse and converts it to a motor PWM signal, 
+with a deadzone defined so that anything within the deadzone will stop the motor.
+
+The "breaking" function takes an input signal and checks its value against the deadzone. 
+If the signal is less than the negative of the deadzone, the right motor is enabled and given a high signal, 
+and then the right PWM pin is set to a high value for two seconds, before the right 
+and left enable pins are set to low to halt the motors.
+
+Similarly, if the signal is greater than the deadzone, the left motor is enabled and given a high signal,
+ and then the left PWM pin is set to a high value for two seconds, before the right 
+and left enable pins are set to low to halt the motors.
+
+Finally, the loop function continuously reads the signal from the CH_2_PIN, converts it to a PWM signal using pulseToPWM, 
+and then passes it to the breaking function to control the motors.
