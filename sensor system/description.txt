@@ -1,0 +1,11 @@
+This code is a simple sketch for controlling various sensors and actuators on an Arduino board. 
+It uses the following libraries: Wire.h, Adafruit_Sensor.h, Adafruit_TSL2561_U.h, and Adafruit_BME280.h. 
+It initializes an BME280 temperature sensor to measure temperature and sets up communication with the Arduino's serial port. 
+The code defines several constants that represent the pin connections of different sensors (e.g. temperature, smoke, proximity) 
+and actuators (e.g. LED, fan, relay) on the board.
+
+The setup function sets the initial state of the pins and starts serial communication with the computer. 
+The loop function continuously reads data from the various sensors, converts the temperature data to Celsius, 
+and updates the state of the LEDs and actuators based on the sensor readings. For example, if the temperature exceeds a threshold value, 
+the tempLed and relay are turned on, while if the smoke sensor reading is high, the smokeLed and fan are turned on. 
+The code then waits for 1 second before reading the sensors again.
