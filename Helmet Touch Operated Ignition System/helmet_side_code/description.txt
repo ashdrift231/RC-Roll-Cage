@@ -1,6 +1,9 @@
 In this sketch, we include the necessary libraries for the nrf24l01 transceiver and the capacitive touch sensor. 
+
 The touch sensor pin is defined as TOUCH_SENSOR_PIN and set as an input. 
+
 The setup function initializes the serial communication, sets the touch sensor as an input, 
 and sets up the nrf24l01 transceiver with the channel and payload size. 
+
 The loop function checks if the touch sensor is pressed, and if it is, 
 sends the message "Touch" via the nrf24l01 transceiver and waits for a moment to prevent multiple messages.
