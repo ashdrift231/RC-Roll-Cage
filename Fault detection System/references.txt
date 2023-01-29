@@ -1,0 +1,15 @@
+how to use the sensor
+https://www.youtube.com/watch?v=d7fODIh1YiY
+
+how it works
+https://www.seeedstudio.com/blog/2020/02/15/acs712-current-sensor-features-how-it-works-arduino-guide/
+
+
+voltage sensor interfaced with the arduino and leds
+  https://www.youtube.com/watch?v=FaoKzi7tgME
+
+website to buy:
+https://www.electronicscomp.com/voltage-detection-sensor-module-india?gclid=CjwKCAiA1L_xBRA2EiwAgcLKA92W_YfIlvyAHugRbdtFwA8wxti8JgCnZVQvZFC0C6OEOJKsscIORBoCQDUQAvD_BwE    
+
+Since input voltge for the voltage sensor is only 25V,we can use potentiometer in series with the supply voltage.
+In order to reduce the current value we can use a resistor of around 1K ohm.

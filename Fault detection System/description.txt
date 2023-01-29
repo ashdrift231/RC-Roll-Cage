@@ -1,0 +1,14 @@
+The code is an Arduino sketch that uses an ACS712 current sensor to detect current levels and control LEDs.
+It first defines the pins that the current sensors are connected to and stores the pin numbers for the LEDs in an array. 
+There are two threshold levels for the current sensors defined, which are used to trigger the LEDs.
+
+In the setup function, the serial monitor is initialized and the LED pins are set as outputs. 
+The loop function starts by reading the current levels of the 5 sensors and storing them in an array. 
+The current levels are then compared with the threshold levels to determine which LED should be turned on. 
+If a sensor's current level is below the threshold, the corresponding LED is turned on for half a second, 
+and then turned off for half a second.
+
+A switch statement is used to control the LEDs based on which current sensor triggered the LED. 
+If the first sensor's current level is below the threshold, the first LED is turned on, 
+and all other LEDs are turned off. The same logic applies to the second, third and fourth sensor.
+ The current level of the triggered sensor is also printed in the serial monitor.
