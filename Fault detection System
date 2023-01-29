@@ -14,8 +14,8 @@ void setup(){
 Serial.begin(9600); //initialize serial monitor
 for (int i = 1; i < 6; i++)
 pinMode(led[i], OUTPUT); // set the LED pins as output
-Serial.println("Robojax Tutorial");
-Serial.println("ACS712 Current Sensor");
+Serial.println("ALL SET");
+Serial.println("ACS712 Current Sensors");
 }
 
 void loop() {
