@@ -1,0 +1,19 @@
+This is an Arduino code that implements a PID control loop to control the speed of a motor based on input from a potentiometer 
+and pulse width modulation (PWM) signal. The code includes the PID library which can be found at the URL: http://playground.arduino.cc/Code/PIDLibrary
+
+The PID control loop is set up with the variables Pk1, Ik1, Dk1, Setpoint1, Input1, Output1, and Output1a 
+representing the proportional, integral, and derivative gains, setpoint, input, output, and absolute output value, respectively.
+
+The setup() function sets the digital pins 2 and A0 as inputs and pins 5 and 6 as outputs. 
+It also attaches an interrupt handler for the pin 2, which measures the pulse width of the PWM signal, 
+and sets up the serial communication at 115200 baud. The PID1 object is created with the input and setpoint variables, 
+the gains, and the sample time. The PID1 object is set to run in automatic mode and with output limits of -255 to 255.
+
+The timeit() function is the interrupt handler that measures the pulse width of the PWM signal. 
+It calculates the pulse width by measuring the elapsed time between the rising and falling edges of the signal.
+
+The loop() function implements a timer to control the frequency of updates. Every 20 milliseconds, 
+the potentiometer value is read, and the pulse width is mapped to a value between -255 and 255 and assigned to the setpoint variable. 
+The Compute() method of the PID1 object is called to update the output value, and the motor is driven based on the output value. 
+If the output value is positive, the motor is driven in one direction, and if it is negative, the motor is driven in the other direction. 
+The output and input values are printed to the serial monitor for debugging purposes.
