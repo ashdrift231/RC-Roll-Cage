@@ -1,0 +1,19 @@
+This code sets up an Arduino sketch to control a motor driver using an RC receiver.
+
+The controller pins and motor driver pins are declared as constants. 
+The deadzone is defined as 20. This means that anything between -20 and 20 will be considered a stop.
+
+In the setup function, the pins are configured as inputs or outputs using pinMode. 
+The STBY_PIN is commented out and not used in this code.
+
+The drive function takes two parameters, speed_a and speed_b, 
+and sets the direction of the motor and its speed.
+Speed_a and speed_b are limited to between -255 and 255.
+
+The pulseToPWM function takes a pulse value and converts it to a PWM value between -255 and 255. 
+If the pulse value is within the deadzone, the motor is stopped.
+
+In the loop function, the pulse width from the RC receiver is read and converted 
+to a PWM value using pulseToPWM. 
+The drive function is then called with the converted value to control the motor. 
+A delay of 5 milliseconds is added at the end to prevent the program from taking too much processing power.
